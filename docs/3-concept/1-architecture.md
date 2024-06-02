@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-# Introduction
-
+# The Architecture of REI Wallet
 
 To be continue.

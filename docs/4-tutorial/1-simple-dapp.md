@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-# Introduction
-
+# Create your own simple dapp
 
 To be continue.
