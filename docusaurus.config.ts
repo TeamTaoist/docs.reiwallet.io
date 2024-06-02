@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'REI Wallet developer documentation',
+  tagline: 'Integrate with and extend upon the self-sovereign wallet for Nervos/CKB/RGB++',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -15,11 +15,6 @@ const config: Config = {
   projectName: 'docs.reiwallet.io',
   organizationName: 'teamtaoist',
   trailingSlash: false,
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -61,7 +56,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'REI Wallet',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -71,11 +66,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/TeamTaoist/docs.reiwallet.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,8 +92,8 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Telegram',
+              href: 'https://t.me/reiwallet',
             },
             {
               label: 'Discord',
@@ -124,7 +119,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} REI Wallet. 💗 by Taoist Labs.`,
     },
     prism: {
       theme: prismThemes.github,

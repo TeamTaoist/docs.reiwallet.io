@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Get Started - 5min ⏱️
           </Link>
         </div>
       </div>
@@ -32,8 +32,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`REI Wallet - the browser extension wallet for Nervos/CKB/RGB++`}
+      description="REI Wallet the browser extension wallet for Nervos/CKB/RGB++">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

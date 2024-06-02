@@ -10,38 +10,36 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Native for Nervos/CKB & RGB++',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        REI Wallet is the first browser extention wallet that natively designed for Nervos/CKB.
+        Easy to use, secure and fast.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Manage xUDTs and DOBs',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        As a browser extension, REI Wallet secures your login, manages your xUDT and trade your DOBs.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Easy to integrate with DApps',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        REI Wallet provides a simple and easy to use API for DApps to interact with the wallet.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
