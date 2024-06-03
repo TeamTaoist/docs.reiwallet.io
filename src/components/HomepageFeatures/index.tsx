@@ -11,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Native for Nervos/CKB & RGB++',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/ckb.png').default,
     description: (
       <>
         REI Wallet is the first browser extention wallet that natively designed for Nervos/CKB.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Manage xUDTs and DOBs',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/network.png').default,
     description: (
       <>
         As a browser extension, REI Wallet secures your login, manages your xUDT and trade your DOBs.
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Easy to integrate with DApps',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/app.png').default,
     description: (
       <>
         REI Wallet provides a simple and easy to use API for DApps to interact with the wallet.
@@ -41,11 +41,16 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+
+    <div className={`${clsx('col col--4')} boxLine`}>
+      <div className="text--center imgBox">
+          <div className="innerBox">
+              <img className={styles.featureSvg} role="img" alt="" src={Svg}/>
+          </div>
+
+
       </div>
-      <div className="text--center padding-horiz--md">
+        <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
@@ -57,7 +62,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row Rowline">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

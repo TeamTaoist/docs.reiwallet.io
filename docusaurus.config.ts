@@ -58,8 +58,8 @@ const config: Config = {
     navbar: {
       title: 'REI Wallet',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'REI Walle Logo',
+        src: 'img/logo.png',
       },
       items: [
         {
