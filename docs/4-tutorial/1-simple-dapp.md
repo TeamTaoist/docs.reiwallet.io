@@ -71,7 +71,7 @@ address: Your ckb address
 ```
  await window.ckb.request({method:"ckb_signMessage",data:{message:"Hello REI Wallet"}})
 ```
-message: This is message that wants to sign with rei wallet
+message: This is message that wants to sign with rei wallet,default add prefix "Nervos Message:".
 
 
 
@@ -83,8 +83,8 @@ await window.ckb.request({method:"ckb_sendCKB",data:{
     to:"ckb....."
 }})
 ```
-amount: This is amount that wants to send 
-to: This is address that wants to send 
+amount: This is amount that wants to send
+to: This is address that wants to send
 
 
 ### 6. Get Network
@@ -100,7 +100,7 @@ await window.ckb.request({method:"ckb_getNetwork"})
 ```
 await window.ckb.request({method:"ckb_switchNetwork",data:"testnet"})
 ```
-data: Two networks are supported here: "mainnet","testnet" 
+data: Two networks are supported here: "mainnet","testnet"
 
 
 
@@ -114,7 +114,7 @@ await window.ckb.request({method:"ckb_getFeeRate"})
 await window.ckb.isConnected()
 ```
 
-### 10. Off/On 
+### 10. Off/On
 Disable/Enable listening state
 ```
 window.ckb.on('chainChanged', chainChangesFunction)
@@ -138,7 +138,7 @@ index: DOB's out_point index(RPC)
 
 txHash: DOB's out_point tx_hash(RPC)
 
-to: This is address that wants to send 
+to: This is address that wants to send
 
 ### 12. Send Cluster
 
@@ -156,7 +156,7 @@ index: Cluster's out_point index
 
 txHash: Cluster's out_point tx_hash
 
-to: This is address that wants to send 
+to: This is address that wants to send
 
 
 ### 13. Send SUDT
@@ -168,7 +168,7 @@ await window.ckb.request({method:"ckb_sendSUDT",data:{
 }})
 ```
 amount: This is amount that wants to send
-to: This is address that wants to send 
+to: This is address that wants to send
 token: SUDT's args(RPC)
 
 ### 14. Send XUDT/RGB++
@@ -189,9 +189,74 @@ args: XUDT's args(RPC)
 code_hash: XUDT's code_hash(RPC)
 hash_type: XUDT's hash_type(RPC)
 
-### 15. Send Raw Transaction
+
+### 15. Sign Raw Transaction
 ```
-await window.ckb.request({method:"ckb_sendRawTransaction",data:{
+await window.ckb.request({method:"ckb_signTransaction",data:{
+    txSkeleton:{...}
+}})
+
+```
+TxSkeleton format is the same with RPC transaction:
+```
+{
+	"version": "0x0",
+	"cell_deps": [{
+		"out_point": {
+			"tx_hash": "0x...",
+			"index": "0x0"
+		},
+		"dep_type": "dep_group"
+	}],
+	"inputs": [{
+		"previous_output": {
+			"tx_hash": "0x...",
+			"index": "0x0"
+		},
+		"since": "0x0"
+	}, {
+		"previous_output": {
+			"tx_hash": "0x...",
+			"index": "0x1"
+		},
+		"since": "0x0"
+	}],
+	"outputs": [{
+		"capacity": "0x2540be400",
+		"lock": {
+			"code_hash":  "0x...",
+			"hash_type": "type",
+			"args": "0x..."
+		}
+	}, {
+		"capacity": "0x47387e42959",
+		"lock": {
+			"code_hash":  "0x...",
+			"hash_type": "type",
+			"args": "0x..."
+		}
+	}],
+	"outputs_data": ["0x", "0x"],
+	"header_deps": [],
+	"witnesses": [ "0x...", "0x"]
+}
+
+```
+
+### 16. Send Raw Transaction
+```
+await window.ckb.request({method:"ckb_sendTransaction",data:{
+    txSkeleton:{...}
+}})
+
+```
+```
+TxSkeleton format is the same  as above
+```
+
+### 17. Sign Raw Transaction(deprecated)
+```
+await window.ckb.request({method:"ckb_signRawTransaction",data:{
     txSkeleton:{...}
 }})
 
@@ -268,6 +333,18 @@ TxSkeleton format is the same with txSkeleton that generated from ckb lumos:
 }
 
 ```
+
+### 18. Send Raw Transaction(deprecated)
+```
+await window.ckb.request({method:"ckb_sendRawTransaction",data:{
+    txSkeleton:{...}
+}})
+
+```
+```
+TxSkeleton format is the same  as above
+```
+
 
 ## Need help?
 
